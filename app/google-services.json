@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "505704441625",
+    "project_id": "tplibros",
+    "storage_bucket": "tplibros.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:505704441625:android:f5f47daa684cea72e28788",
+        "android_client_info": {
+          "package_name": "com.example.tp20"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsB_sw29RNU6opuNzRFQpyNngb_5e0tgE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

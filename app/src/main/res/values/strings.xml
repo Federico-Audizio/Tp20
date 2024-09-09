@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mi Aplicación</string>
+    <string name="title_hint">Título</string>
+    <string name="description_hint">Descripción</string>
+    <string name="subir_un_post">Subir un Post</string>
+    <string name="cargar_post">Cargar Post</string>
+    <!-- Otros textos -->
+</resources>
+
