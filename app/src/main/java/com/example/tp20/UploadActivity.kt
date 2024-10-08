@@ -1,5 +1,6 @@
 package com.example.tp20
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -12,21 +13,24 @@ class UploadActivity : AppCompatActivity() {
 
     private lateinit var titleEditText: EditText
     private lateinit var descriptionEditText: EditText
-    private lateinit var uploadButton: Button
+    private lateinit var CargarButton: Button
     private val db = FirebaseFirestore.getInstance()
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upload)
 
         titleEditText = findViewById(R.id.titleEditText)
         descriptionEditText = findViewById(R.id.descriptionEditText)
-        uploadButton = findViewById(R.id.uploadButton)
+        CargarButton = findViewById(R.id.CargarButton)
 
-        uploadButton.setOnClickListener {
+        CargarButton.setOnClickListener {
             uploadPost()
+            goToHome()
         }
     }
+
 
     private fun uploadPost() {
         val title = titleEditText.text.toString().trim()
@@ -41,18 +45,20 @@ class UploadActivity : AppCompatActivity() {
             "title" to title,
             "description" to description
         )
-
         db.collection("posts")
             .add(post)
             .addOnSuccessListener {
                 Toast.makeText(this, "Post subido con éxito", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, HomeActivity::class.java)
-                startActivity(intent)
-                finish()
+
             }
             .addOnFailureListener { e ->
                 Toast.makeText(this, "Error al subir el post: ${e.message}", Toast.LENGTH_SHORT).show()
             }
+    }
+    private fun goToHome() {
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
+        finish()  // Cierra la actividad actual para que el usuario no pueda volver a la pantalla de login presionando 'Atrás'
     }
 }
 
