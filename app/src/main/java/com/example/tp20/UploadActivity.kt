@@ -3,6 +3,7 @@ package com.example.tp20
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -52,6 +53,7 @@ class UploadActivity : AppCompatActivity() {
 
             }
             .addOnFailureListener { e ->
+                Log.e("UploadActivity", "Error al subir el post", e)
                 Toast.makeText(this, "Error al subir el post: ${e.message}", Toast.LENGTH_SHORT).show()
             }
     }
