@@ -45,6 +45,8 @@ dependencies {
 
     //
 
+    implementation ("com.google.android.gms:play-services-maps:18.0.0")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

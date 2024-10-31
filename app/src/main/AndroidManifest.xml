@@ -22,6 +22,13 @@
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="TU_CLAVE_DE_API_AQUÍ" />
+
+
         <activity
             android:name=".AuthActivity"
             android:exported="true">
@@ -32,5 +39,8 @@
             </intent-filter>
         </activity>
     </application>
+
+
+
 
 </manifest>

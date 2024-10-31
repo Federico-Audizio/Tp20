@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FirebaseFirestore
+import android.widget.Toast
 
 class HomeActivity : AppCompatActivity() {
 
@@ -27,9 +28,6 @@ class HomeActivity : AppCompatActivity() {
         postAdapter = PostAdapter(postList)
         recyclerView.adapter = postAdapter
 
-        // Cargar posts desde Firebase
-        fetchPosts()
-
         // Configurar el botón para ir a UploadActivity
         uploadButton.setOnClickListener {
             val intent = Intent(this, UploadActivity::class.java)
@@ -37,16 +35,31 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
+    // Método para recargar los posts cada vez que vuelvas a la actividad
+    override fun onResume() {
+        super.onResume()
+        fetchPosts() // Llamar para recargar la lista
+    }
+
     private fun fetchPosts() {
         db.collection("posts")
             .get()
             .addOnSuccessListener { result ->
+                postList.clear() // Limpiar lista antes de agregar nuevos datos
                 for (document in result) {
                     val title = document.getString("title") ?: ""
                     val description = document.getString("description") ?: ""
-                    postList.add(Post(title, description))
+                    val address = document.getString("address") ?: "Ubicación no disponible"
+
+                    // Agrega el post con título, descripción y dirección
+                    postList.add(Post(title, description, address))
                 }
                 postAdapter.notifyDataSetChanged()
             }
+            .addOnFailureListener { e ->
+                Toast.makeText(this, "Error al cargar posts: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
     }
+
+
 }

@@ -18,7 +18,13 @@ class PostAdapter(private val postList: List<Post>) : RecyclerView.Adapter<PostA
         val post = postList[position]
         holder.titleTextView.text = post.title
         holder.descriptionTextView.text = post.description
+        holder.locationTextView.text = if (post.address.isNotEmpty()) {
+            "Ubicación: ${post.address}"
+        } else {
+            "Ubicación no disponible"
+        }
     }
+
 
     override fun getItemCount(): Int {
         return postList.size
@@ -27,5 +33,7 @@ class PostAdapter(private val postList: List<Post>) : RecyclerView.Adapter<PostA
     class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titleTextView: TextView = itemView.findViewById(R.id.postTitleTextView)
         val descriptionTextView: TextView = itemView.findViewById(R.id.postDescriptionTextView)
+        val locationTextView: TextView = itemView.findViewById(R.id.postLocationTextView) // TextView para la ubicación
     }
 }
+
