@@ -1,8 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Tp20" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Color de la barra de estado -->
+        <item name="android:statusBarColor">#82B1FF</item>
+        <!-- Color de la barra de navegación -->
+        <item name="android:navigationBarColor">#82B1FF</item>
     </style>
 
     <style name="Theme.Tp20" parent="Base.Theme.Tp20" />

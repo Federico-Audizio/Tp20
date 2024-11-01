@@ -5,53 +5,89 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#82B1FF"
     tools:context=".AuthActivity">
 
+    <!-- Contenedor para centrar los elementos en pantalla -->
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="20dp">
 
+        <!-- Logo de la aplicación -->
+        <TextView
+            android:id="@+id/appLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trueque Libros"
+            android:textColor="#FFFFFF"
+            android:textSize="50sp"
+            android:fontFamily="cursive"
+            android:layout_marginBottom="30dp" />
+
+        <!-- Campo de email -->
         <EditText
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Email"
-            android:inputType="textEmailAddress" />
+            android:hint="Correo Electronico"
+            android:inputType="text"
+            android:backgroundTint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:padding="10dp"
+            android:layout_marginBottom="15dp" />
 
+        <!-- Campo de contraseña -->
         <EditText
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:hint="Contraseña"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:backgroundTint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:padding="10dp"
+            android:layout_marginBottom="20dp" />
 
+        <!-- Botones de Registro e Inicio de sesión -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
 
             <Button
                 android:id="@+id/singUpButton"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="REGISTRAR" />
+                android:text="REGISTRAR"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#82B1FF"
+                android:layout_marginEnd="5dp" />
 
             <Button
                 android:id="@+id/loginButton"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="ACCEDER" />
+                android:text="INICIAR SESIÓN"
+                android:backgroundTint="#FFFFFF"
+                android:textColor="#82B1FF"
+                android:layout_marginStart="5dp" />
         </LinearLayout>
+
+
+
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
