@@ -6,5 +6,13 @@
     <string name="subir_un_post">Subir un Post</string>
     <string name="cargar_post">Cargar Post</string>
     <!-- Otros textos -->
+
+    <!-- AdMob -->
+    <string name="Id_prueba">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="Id_produccion">ca-app-pub-9448027649665666~5323906109</string>
+    <string name="Banner_produccion">ca-app-pub-9448027649665666/6106403108</string>
+    <string name="Banner_prueba">ca-app-pub-3940256099942544/9214589741</string>
+
+
 </resources>
 

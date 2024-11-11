@@ -1,67 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:ads="https//schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#82B1FF"
-    tools:context=".HomeActivity">
+    tools:context=".HomeActivity"
+    tools:ignore="NamespaceTypo">
 
-    <!-- Título en la parte superior -->
+    <!--Título en la parte superior -->
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView_Home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        app:adSize="BANNER"
+        app:adUnitId="@string/Banner_prueba"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
+
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="Libros Disponibles"
-        android:textSize="34sp"
         android:textColor="#FFFFFF"
+        android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
 
     <!-- CardView contenedor del RecyclerView para darle puntas redondeadas -->
+
+    <!-- Botón para subir un nuevo post, más grande y más arriba -->
+
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="20dp"
         app:cardCornerRadius="16dp"
-        app:layout_constraintTop_toBottomOf="@id/titleTextView"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/uploadButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/uploadButton">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
+        app:layout_constraintVertical_bias="0.058">
+
 
         <!-- RecyclerView para mostrar la lista de publicaciones -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="492dp"
             android:background="#FFFFFF"
-            android:padding="8dp"
             android:clipToPadding="false"
+            android:padding="8dp"
             tools:listitem="@layout/item_post" />
     </androidx.cardview.widget.CardView>
 
-    <!-- Botón para subir un nuevo post, más grande y más arriba -->
     <Button
         android:id="@+id/uploadButton"
-        android:layout_width="0dp"
+        android:layout_width="30mm"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:padding="16dp"
-        android:text="SUBIR UN POST"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="3mm"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#FFFFFF"
+        android:padding="16dp"
+        android:text="Subir Publicación"
         android:textColor="#82B1FF"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/CerrarSesion"
+        android:layout_width="27mm"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3mm"
+        android:layout_marginEnd="6mm"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#FFFFFF"
+        android:padding="16dp"
+        android:text="Cerrar Sesión"
+        android:textColor="#82B1FF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

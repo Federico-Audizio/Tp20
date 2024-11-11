@@ -11,7 +11,7 @@ android {
     defaultConfig {
         applicationId = "com.example.tp20"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -34,19 +34,22 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+
 }
 
 dependencies {
 
     //fire base
-    implementation(platform("com.google.firebase:firebase-bom:33.2.0"))
-    implementation("com.google.firebase:firebase-analytics")
-    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.play.services.ads)
 
 
     //
 
-    implementation ("com.google.android.gms:play-services-maps:18.0.0")
+    implementation ("com.google.android.gms:play-services-maps:19.0.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

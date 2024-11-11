@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ad-services-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Opciones adicionales de configuración de anuncios (si es necesario) -->
+    <ad-id-permission-enabled>true</ad-id-permission-enabled>
+</ad-services-config>
